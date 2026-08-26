@@ -1,4 +1,6 @@
-"use client"
+"use client";
+
+import Link from "next/link";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -10,11 +12,7 @@ import {
   User,
 } from "lucide-react";
 
-interface SignUpProps {
-  onNavigateToSignIn: () => void;
-}
-
-const SignUp = ({ onNavigateToSignIn }: SignUpProps) => {
+const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -23,57 +21,91 @@ const SignUp = ({ onNavigateToSignIn }: SignUpProps) => {
   };
 
   return (
-    <main className="auth-page">
-      <div className="auth-glow auth-glow-left" />
-      <div className="auth-glow auth-glow-right" />
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0b1326] px-4 py-8 text-[#dae2fd]">
+      <div className="absolute left-[-300px] top-[20%] h-[700px] w-[700px] rounded-full bg-[#8083ff]/10 blur-[120px]" />
 
-      <section className="auth-card">
-        <div className="auth-header">
-          <div className="auth-logo">
-            <Bot size={26} />
+      <div className="absolute bottom-[10%] right-[-250px] h-[600px] w-[600px] rounded-full bg-[#4edea3]/10 blur-[120px]" />
+
+      <section className="relative z-10 w-full max-w-md rounded-2xl border border-white/10 bg-white/[0.06] p-6 shadow-2xl backdrop-blur-xl sm:p-8">
+        <div className="flex flex-col items-center text-center">
+          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#c0c1ff] to-[#4edea3] text-[#0b1326]">
+            <Bot size={28} />
           </div>
 
-          <h1>Create your account</h1>
+          <h1 className="mt-5 text-3xl font-bold text-white">
+            Create your account
+          </h1>
 
-          <p>Start building smarter workflows with Nexora AI.</p>
+          <p className="mt-2 text-sm text-slate-400">
+            Start building smarter workflows with Nexora AI.
+          </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="auth-form">
-          <div className="input-group">
-            <label htmlFor="name">Full name</label>
+        <form
+          onSubmit={handleSubmit}
+          className="mt-8 flex flex-col gap-5"
+        >
+          <div>
+            <label
+              htmlFor="name"
+              className="mb-2 block text-sm font-medium text-slate-300"
+            >
+              Full name
+            </label>
 
-            <div className="input-wrapper">
-              <User size={18} />
+            <div className="relative">
+              <User
+                size={18}
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"
+              />
 
               <input
                 id="name"
                 type="text"
-                placeholder="Naveen Kumar"
+                placeholder="Your name"
                 required
+                className="w-full rounded-xl border border-white/10 bg-[#0b1326]/80 py-3 pl-11 pr-4 text-white outline-none transition placeholder:text-slate-600 focus:border-[#c0c1ff] focus:ring-2 focus:ring-[#c0c1ff]/20"
               />
             </div>
           </div>
 
-          <div className="input-group">
-            <label htmlFor="signup-email">Email address</label>
+          <div>
+            <label
+              htmlFor="signup-email"
+              className="mb-2 block text-sm font-medium text-slate-300"
+            >
+              Email address
+            </label>
 
-            <div className="input-wrapper">
-              <Mail size={18} />
+            <div className="relative">
+              <Mail
+                size={18}
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"
+              />
 
               <input
                 id="signup-email"
                 type="email"
                 placeholder="name@company.com"
                 required
+                className="w-full rounded-xl border border-white/10 bg-[#0b1326]/80 py-3 pl-11 pr-4 text-white outline-none transition placeholder:text-slate-600 focus:border-[#c0c1ff] focus:ring-2 focus:ring-[#c0c1ff]/20"
               />
             </div>
           </div>
 
-          <div className="input-group">
-            <label htmlFor="signup-password">Password</label>
+          <div>
+            <label
+              htmlFor="signup-password"
+              className="mb-2 block text-sm font-medium text-slate-300"
+            >
+              Password
+            </label>
 
-            <div className="input-wrapper">
-              <Lock size={18} />
+            <div className="relative">
+              <Lock
+                size={18}
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"
+              />
 
               <input
                 id="signup-password"
@@ -81,39 +113,55 @@ const SignUp = ({ onNavigateToSignIn }: SignUpProps) => {
                 placeholder="Create a strong password"
                 required
                 minLength={6}
+                className="w-full rounded-xl border border-white/10 bg-[#0b1326]/80 py-3 pl-11 pr-12 text-white outline-none transition placeholder:text-slate-600 focus:border-[#c0c1ff] focus:ring-2 focus:ring-[#c0c1ff]/20"
               />
 
               <button
                 type="button"
-                className="password-toggle"
                 onClick={() => setShowPassword(!showPassword)}
                 aria-label={
                   showPassword ? "Hide password" : "Show password"
                 }
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 transition hover:text-white"
               >
-                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                {showPassword ? (
+                  <EyeOff size={18} />
+                ) : (
+                  <Eye size={18} />
+                )}
               </button>
             </div>
           </div>
 
-          <label className="remember-me terms">
-            <input type="checkbox" required />
+          <label className="flex items-start gap-2 text-sm leading-5 text-slate-400">
+            <input
+              type="checkbox"
+              required
+              className="mt-0.5 h-4 w-4 accent-[#c0c1ff]"
+            />
+
             <span>
               I agree to the Terms of Service and Privacy Policy
             </span>
           </label>
 
-          <button type="submit" className="primary-button">
+          <button
+            type="submit"
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#c0c1ff] px-4 py-3 font-semibold text-[#0b1326] transition hover:-translate-y-0.5 hover:bg-[#e1e0ff]"
+          >
             Create Account
             <ArrowRight size={18} />
           </button>
         </form>
 
-        <p className="auth-switch">
+        <p className="mt-7 text-center text-sm text-slate-400">
           Already have an account?{" "}
-          <button type="button" onClick={onNavigateToSignIn}>
+          <Link
+            href="/signin"
+            className="font-medium text-[#c0c1ff] hover:text-white"
+          >
             Sign in
-          </button>
+          </Link>
         </p>
       </section>
     </main>
