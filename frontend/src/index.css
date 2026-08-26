@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  background: #0b1326;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(192, 193, 255, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 60%,
+      rgba(78, 222, 163, 0.05),
+      transparent 25%
+    ),
+    #0b1326;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.font-geist {
+  font-family: "Geist", sans-serif;
+}
+
+::selection {
+  background: rgba(192, 193, 255, 0.35);
+  color: white;
+}
