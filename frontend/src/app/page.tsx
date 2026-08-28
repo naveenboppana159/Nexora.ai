@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 import {
   Bell,
   Sparkles,
@@ -37,13 +39,13 @@ const features = [
 ];
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <main className="min-h-screen bg-[#0b1326] text-white">
-
       {/* Navbar */}
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0b1326]/80 backdrop-blur-xl">
         <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#c0c1ff]">
               <Sparkles className="h-5 w-5 text-[#0b1326]" />
@@ -74,7 +76,6 @@ export default function Home() {
         <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[#c0c1ff]/10 blur-[130px]" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2">
-
           {/* Left */}
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-[#c0c1ff]/20 bg-[#c0c1ff]/10 px-4 py-2 text-sm text-[#c0c1ff]">
@@ -95,7 +96,10 @@ export default function Home() {
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <button className="flex items-center justify-center gap-2 rounded-xl bg-[#c0c1ff] px-6 py-4 font-semibold text-[#0b1326] transition hover:scale-105">
+              <button
+                onClick={() => router.push("/signin")}
+                className="flex items-center justify-center gap-2 rounded-xl bg-[#c0c1ff] px-6 py-4 font-semibold text-[#0b1326] transition hover:scale-105"
+              >
                 Get Started
                 <ArrowRight className="h-5 w-5" />
               </button>
@@ -122,9 +126,7 @@ export default function Home() {
           {/* Right Dashboard */}
           <div className="relative">
             <div className="rounded-3xl border border-white/10 bg-white/[0.05] p-4 shadow-2xl backdrop-blur-xl transition duration-500 lg:rotate-2 hover:rotate-0">
-
               <div className="overflow-hidden rounded-2xl bg-[#111b33]">
-
                 <div className="flex items-center justify-between border-b border-white/10 p-5">
                   <div className="flex items-center gap-3">
                     <div className="rounded-xl bg-[#c0c1ff]/10 p-3">
@@ -143,7 +145,6 @@ export default function Home() {
                 </div>
 
                 <div className="grid gap-4 p-5 sm:grid-cols-2">
-
                   <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
                     <p className="text-sm text-slate-400">
                       Active Workflows
@@ -211,7 +212,6 @@ export default function Home() {
       {/* Features */}
       <section className="px-6 py-28">
         <div className="mx-auto max-w-7xl">
-
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-4xl font-bold">
               Intelligent by Design
