@@ -28,10 +28,8 @@ export default function MetricCard({
         <div className="absolute inset-0 bg-to-br from-primary/5 to-secondary/5 pointer-events-none" />
         <div className="flex items-center justify-between relative z-10">
           <span className={`text-sm font-medium uppercase tracking-widest text-primary flex items-center gap-1 ${accent}`}>
-            <MaterialSymbol icon="auto_awesome" className="text-[16px]" />
             {label}
           </span>
-          <MaterialSymbol icon="trending_up" className="text-primary" />
         </div>
         <div className="text-5xl font-bold text-on-surface mt-auto relative z-10 flex items-baseline gap-1">
           {value}
