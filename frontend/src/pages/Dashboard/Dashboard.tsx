@@ -12,18 +12,21 @@ const METRICS = [
     value: 12,
     accent: "text-primary",
     glow: "bg-primary-container/10",
+    highlight: true,
   },
   {
     label: "Active Tasks",
     value: 48,
     accent: "text-secondary",
     glow: "bg-secondary/10",
+    highlight: true,
   },
   {
     label: "Completed",
     value: 156,
     accent: "text-tertiary",
     glow: "bg-tertiary/10",
+    highlight: true,
   },
 ];
 
@@ -80,6 +83,7 @@ export default function Dashboard({
                   value={metric.value}
                   accent={metric.accent}
                   glow={metric.glow}
+                  highlight={metric.highlight}
                 />
               ))}
 

@@ -19,10 +19,10 @@ const NAV_ITEMS: NavItem[] = [
 
 export default function SideNav() {
   return (
-    <aside className="hidden md:flex flex-col h-screen left-0 w-64 bg-surface-container border-r border-outline-variant/20 shadow-lg py-6 z-40">
+    <aside className="hidden md:flex flex-col h-screen left-0 w-52 bg-surface-container border-r border-outline-variant/20 shadow-lg py-6 z-40">
       {/* Header */}
       <div className="px-6 mb-8 flex items-center gap-3">
-        <div className="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center shrink-0">
+        <div className="w-5 h-5 rounded-lg bg-primary-container flex items-center justify-center shrink-0">
         </div>
 
         <div>
