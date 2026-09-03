@@ -51,8 +51,6 @@ export default function Dashboard({
 
         <main className="flex-1 overflow-y-auto p-4 md:p-6 xl:p-8 2xl:px-16">
           <div className="max-w-7xl mx-auto space-y-8 pb-12">
-
-            {/* Welcome */}
             <section className="flex flex-col md:flex-row md:items-end justify-between gap-4">
               <div>
                 <h2 className="font-geist font-bold text-on-surface text-2xl md:text-5xl tracking-tight">
@@ -73,8 +71,6 @@ export default function Dashboard({
                 </button>
               </div>
             </section>
-
-            {/* Metrics */}
             <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {METRICS.map((metric) => (
                 <MetricCard
@@ -96,8 +92,6 @@ export default function Dashboard({
                 highlight
               />
             </section>
-
-            {/* Chart + Activity */}
             <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               <ProductivityChart />
               <ActivityAndDeadlines />

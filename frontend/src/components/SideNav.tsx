@@ -20,7 +20,6 @@ const NAV_ITEMS: NavItem[] = [
 export default function SideNav() {
   return (
     <aside className="hidden md:flex flex-col h-screen left-0 w-52 bg-surface-container border-r border-outline-variant/20 shadow-lg py-6 z-40">
-      {/* Header */}
       <div className="px-6 mb-8 flex items-center gap-3">
         <div className="w-5 h-5 rounded-lg bg-primary-container flex items-center justify-center shrink-0">
         </div>
@@ -36,7 +35,6 @@ export default function SideNav() {
         </div>
       </div>
 
-      {/* Nav Links */}
       <nav className="flex-1 px-2 space-y-2">
         {NAV_ITEMS.map((item) => (
           <a
@@ -64,7 +62,6 @@ export default function SideNav() {
         ))}
       </nav>
 
-      {/* CTA */}
       <div className="px-6 mt-auto pt-6">
         <button className="w-full py-3 px-4 bg-primary text-on-primary text-sm font-semibold rounded-lg hover:bg-primary-fixed transition-colors flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(192,193,255,0.2)]">
           <MaterialSymbol icon="add" className="text-[20px]" />

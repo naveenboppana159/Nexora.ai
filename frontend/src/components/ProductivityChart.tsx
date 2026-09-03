@@ -11,13 +11,6 @@ const DATA = [
 const Y_AXIS_VALUES = [100, 75, 50, 25, 0];
 
 export default function ProductivityChart() {
-  // Convert actual values into SVG coordinates.
-  // SVG y-axis starts from the top:
-  // value 100 -> y 0
-  // value 75  -> y 25
-  // value 50  -> y 50
-  // value 25  -> y 75
-  // value 0   -> y 100
   const points = DATA.map((item, index) => {
     const x = (index / (DATA.length - 1)) * 100;
     const y = 100 - item.value;
@@ -78,7 +71,7 @@ export default function ProductivityChart() {
       </div>
 
       <div className="flex-1 min-h-[250px] relative w-full">
-        {/* Y Axis Labels */}
+
         <div className="absolute -left-1 top-0 bottom-0 w-8 flex flex-col justify-between text-xs text-outline-variant font-semibold py-0">
           {Y_AXIS_VALUES.map((value) => (
             <span
@@ -90,7 +83,6 @@ export default function ProductivityChart() {
           ))}
         </div>
 
-        {/* Chart Area */}
         <div className="absolute left-10 right-0 top-0 bottom-0 border-l border-b border-outline-variant/20">
           <svg
             className="absolute inset-0 w-full h-full overflow-visible"
@@ -137,7 +129,6 @@ export default function ProductivityChart() {
               </filter>
             </defs>
 
-            {/* Horizontal Grid Lines */}
             {[0, 25, 50, 75, 100].map((y) => (
               <line
                 key={y}
@@ -153,13 +144,11 @@ export default function ProductivityChart() {
               />
             ))}
 
-            {/* Gradient Area */}
             <path
               d={areaPath}
               fill="url(#productivity-chart-gradient)"
             />
 
-            {/* Main Line */}
             <path
               d={linePath}
               fill="none"
@@ -170,7 +159,6 @@ export default function ProductivityChart() {
               vectorEffect="non-scaling-stroke"
             />
 
-            {/* Data Points */}
             {points.map((point) => (
               <g key={point.day}>
                 <circle
@@ -195,7 +183,6 @@ export default function ProductivityChart() {
         </div>
       </div>
 
-      {/* X Axis Days */}
       <div className="ml-10 flex justify-between text-outline-variant text-xs font-medium mt-3">
         {DATA.map((item) => (
           <span
