@@ -11,7 +11,6 @@ export default function TopNav({
 }: TopNavProps) {
   return (
     <header className="flex h-20 items-center justify-between border-b border-outline-variant/30 bg-surface px-4 md:px-6">
-      {/* Left Side */}
       <div>
         <h1 className="text-lg font-semibold text-on-surface">
           Dashboard
@@ -22,9 +21,8 @@ export default function TopNav({
         </p>
       </div>
 
-      {/* Right Side */}
       <div className="flex items-center gap-10">
-        {/* Search */}
+
         <button
           className="flex h-10 w-10 items-center justify-center rounded-lg text-on-surface-variant transition-colors hover:bg-surface-container-high hover:text-on-surface"
           aria-label="Search"
@@ -34,7 +32,6 @@ export default function TopNav({
           </span>
         </button>
 
-        {/* Notifications */}
         <button
           className="relative flex h-10 w-10 items-center justify-center rounded-lg text-on-surface-variant transition-colors hover:bg-surface-container-high hover:text-on-surface"
           aria-label="Notifications"
@@ -46,10 +43,8 @@ export default function TopNav({
           <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-error" />
         </button>
 
-        {/* Divider */}
         <div className="mx-2 h-8 w-px bg-outline-variant/30" />
 
-        {/* User Profile */}
         <button
           className="flex items-center gap-2 rounded-lg transition-opacity duration-200 hover:opacity-80"
           aria-label={`${userName} profile`}
